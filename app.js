@@ -3,7 +3,7 @@
  * Do not put student records or access codes in this file.
  * Set API_URL only after deploying and testing a secure backend.
  */
-const API_URL = ""; // Google Apps Script web-app URL (configure only after backend setup)
+const API_URL = "https://script.google.com/a/macros/guru.sd.belajar.id/s/AKfycbyUgoCMwsNFAruBpPGIzm0iYRl6oIYejvpR_qzljtqkQNt8h_gvxF8o9SjDmJ1GMfwLfQ/exec"; // Google Apps Script web-app URL (configure only after backend setup)
 
 const demoReport = {
   student: { id: "DEMO01", name: "Contoh Ananda", className: "Primary 1" },
