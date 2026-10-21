@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#164e9b">
+  <title>Laporan Agama Islam | JR Primary</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="JR Primary">
+        <div class="brand-mark" id="logoMark">JR</div>
+        <div class="brand-copy"><strong>JR PRIMARY</strong><span>LEARNING WITH PURPOSE</span></div>
+      </a>
+      <div class="topbar-right"><span class="status-dot"></span><span>Portal Orang Tua</span></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">ISLAMIC LEARNING JOURNEY</p>
+          <h1>Setiap langkah kecil,<br><em>berarti bagi masa depan.</em></h1>
+          <p class="hero-desc">Pantau perjalanan belajar Agama Islam ananda—mulai dari hafalan, doa harian, hingga posisi bacaan Iqra dan Al-Qur’an.</p>
+          <div class="hero-tags"><span>✦ Bertumbuh</span><span>✦ Berproses</span><span>✦ Berakhlak</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="book-illustration"><div class="book-cover"></div><div class="book-pages"></div><div class="book-ribbon"></div></div>
+          <div class="art-star star-one">✦</div><div class="art-star star-two">✧</div><div class="art-star star-three">✦</div>
+          <div class="art-pill">A journey of growth</div>
+        </div>
+      </section>
+
+      <section class="lookup-card">
+        <div class="lookup-icon">⌕</div>
+        <div class="lookup-content">
+          <h2>Lihat laporan ananda</h2>
+          <p>Masukkan nama lengkap siswa sesuai data sekolah.</p>
+          <form id="lookupForm">
+            <label for="studentNameInput">Nama lengkap siswa</label>
+            <input id="studentNameInput" name="studentName" placeholder="Masukkan nama lengkap siswa" autocomplete="name" required>
+            <button class="primary-btn" type="submit"><span>Lihat laporan</span><span aria-hidden="true">→</span></button>
+            <p class="form-note" id="formMessage" role="status">Mode pratinjau aktif. Hubungkan data sekolah sebelum digunakan orang tua.</p>
+          </form>
+          <button id="demoButton" class="demo-link" type="button">Lihat contoh laporan <span>↗</span></button>
+        </div>
+      </section>
+
+      <section id="report" class="report-section hidden" aria-live="polite">
+        <div class="report-heading"><div><p class="eyebrow">LAPORAN PERKEMBANGAN</p><h2 id="studentName">Nama Siswa</h2><p id="studentMeta" class="muted">Kelas • Diperbarui hari ini</p></div><span class="report-badge">● Laporan belajar</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-icon blue">✧</span><span class="stat-label">Target selesai</span><strong id="doneCount">0</strong><small>Hafalan dan pembelajaran</small></article>
+          <article class="stat-card"><span class="stat-icon teal">↗</span><span class="stat-label">Sedang dipelajari</span><strong id="learningCount">0</strong><small>Terus berlatih, ya!</small></article>
+          <article class="stat-card"><span class="stat-icon gold">◷</span><span class="stat-label">Bacaan terakhir</span><strong id="readingShort">—</strong><small id="readingDate">Belum ada pembaruan</small></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel progress-panel"><div class="panel-title"><div><p class="eyebrow">TARGET PEMBELAJARAN</p><h3>Perjalanan ananda</h3></div><span class="tiny-label">Ringkasan</span></div>
+            <div class="progress-track"><div id="overallBar" class="progress-fill" style="width:0%"></div></div><div class="progress-summary"><strong id="overallPercent">0%</strong><span id="overallText">target selesai</span></div>
+            <div id="targetGroups" class="target-groups"></div>
+          </article>
+          <article class="panel reading-panel"><div class="panel-title"><div><p class="eyebrow">IQRA & AL-QUR’AN</p><h3>Posisi bacaan terakhir</h3></div><span class="reading-symbol">۞</span></div>
+            <div class="reading-feature"><span class="reading-label">SAAT INI</span><h3 id="readingTitle">Belum ada data bacaan</h3><p id="readingPosition">Posisi bacaan akan tampil di sini.</p></div>
+            <div class="reading-details"><div><span>Status</span><strong id="readingStatus">—</strong></div><div><span>Pembaruan terakhir</span><strong id="readingUpdated">—</strong></div></div>
+            <div class="teacher-note"><span>✦</span><div><strong>Catatan guru</strong><p id="readingNote">Semoga ananda terus bersemangat dalam belajar.</p></div></div>
+          </article>
+        </div>
+        <div class="panel target-table-panel"><div class="panel-title"><div><p class="eyebrow">DETAIL CAPAIAN</p><h3>Target yang dipelajari</h3></div><select id="categoryFilter" aria-label="Filter kategori"><option value="Semua">Semua kategori</option><option>Surah</option><option>Doa</option><option>Lainnya</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>Kategori</th><th>Target</th><th>Status</th><th>Tanggal setoran</th></tr></thead><tbody id="targetRows"></tbody></table></div>
+          <p id="emptyRows" class="empty-state hidden">Belum ada data target untuk ditampilkan.</p>
+        </div>
+        <p class="report-footer">Laporan ini merupakan catatan perkembangan belajar, bukan penilaian akhir. Terima kasih telah mendampingi proses belajar ananda. <strong>— JR Primary</strong></p>
+      </section>
+      <section class="privacy-note"><span class="privacy-icon">◇</span><div><strong>Privasi ananda adalah prioritas kami</strong><p>Nama lengkap digunakan untuk mencari laporan. Karena nama saja bukan verifikasi identitas yang kuat, sekolah perlu membatasi informasi yang ditampilkan dan menyetujui risiko privasi sebelum portal dipublikasikan.</p></div></section>
+    </main>
+    <footer><span>© <span id="year"></span> JR Primary</span><span>Islamic Learning Progress</span></footer>
+  </div>
+</body>
+</html>
